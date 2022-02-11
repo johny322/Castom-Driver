@@ -125,13 +125,13 @@ class Patcher(object):
             print(f'Chrome version: {chrome_version}')
             if chrome_version:
                 release = chrome_version
-                # self.version_main = release.version[0]
+                self.version_main = release.version[0]
                 self.version_full = self.fetch_release_number()
             else:
                 release = self.fetch_release_number()
-                # self.version_main = release.version[0]
+                self.version_main = release.version[0]
                 self.version_full = release
-        self.version_main = release.version[0]
+#         self.version_main = release.version[0]
         self.unzip_package(self.fetch_package())
 
         return self.patch()
